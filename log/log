@@ -1,0 +1,1 @@
+time="2021-07-04T17:54:43+08:00" level=info Agent=PostmanRuntime/7.26.8 DataSize=200 HostName=SK-20200704SHEH Ip="::1" Method=GET Path=/api/v1/users SpendTime="48 ms" status=200
