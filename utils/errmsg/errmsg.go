@@ -17,6 +17,7 @@ const (
 	ERROR_ART_NOT_EXIST = 2001
 	// 分类提示码
 	ERROR_CATENAME_USED = 3001
+	ERROR_CATE_Not_EXIST = 3002
 
 )
 
@@ -33,6 +34,7 @@ var codeMsg = map[int]string{
 	ERROR_CATENAME_USED : "该分类已存在",
 	ERROR_ART_NOT_EXIST : "文章不存在",
 	ERROR_USER_NO_RIGHT : "用户没有权限",
+	ERROR_CATE_Not_EXIST : "分类不存在",
 }
 
 func GetErrMsg(code int)string {

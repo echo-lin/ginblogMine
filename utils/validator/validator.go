@@ -7,6 +7,7 @@ import (
 	unTrans "github.com/go-playground/universal-translator"
 	"github.com/go-playground/locales/zh_Hans_CN"
 	zhTrans "github.com/go-playground/validator/v10/translations/zh"
+	"reflect"
 )
 
 func Validate(data interface{})(string, int){
@@ -17,6 +18,12 @@ func Validate(data interface{})(string, int){
 	if err != nil{
 		fmt.Println("err",err)
 	}
+
+	validate.RegisterTagNameFunc(func(field reflect.StructField)string{
+		label := field.Tag.Get("label")
+		return label
+	})
+
 	err = validate.Struct(data)
 	if err != nil{
 		for _,v := range err.(validator.ValidationErrors){

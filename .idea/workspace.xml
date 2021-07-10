@@ -20,24 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8030d4f9-1df1-4a95-8ee7-5fe1e8ab90aa" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/api/v1/article.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/v1/category.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/v1/login.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/v1/upload.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/v1/user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/config.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/middleware/jwt.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/middleware/logger.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/Article.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/Category.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/Upload.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/User.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/db.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/router.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/errmsg/errmsg.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/setting.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/validator/validator.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1/article.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/article.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1/category.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/category.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/cors.go" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/cors.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Article.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/Article.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Category.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/Category.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/User.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/User.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/errmsg/errmsg.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/errmsg/errmsg.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/validator/validator.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/validator/validator.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

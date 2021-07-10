@@ -53,15 +53,26 @@ func DeleteArt(id int)int{
 	return errmsg.SUCCSE
 }
 
+func GetCateArt(id int,pageSize int, pageNum int)([]Article, int,int){
+	var cateArtList []Article
+	var total int
+	err := db.Preload("Category").Limit(pageSize).Offset((pageNum-1)*pageSize).Where("cid =?",id).Find(&cateArtList).Count(&total).Error
+	if err != nil{
+		return nil,errmsg.ERROR_CATE_Not_EXIST,0
+	}
+	return cateArtList, errmsg.SUCCSE, total
+}
+
 // 获取文章列表
-func GetArt(pageSize int, pageNum int)([]Article,int){
+func GetArt(pageSize int, pageNum int)([]Article,int,int){
 	var artticleList []Article
-	err = db.Preload("Category").Limit(pageSize).Offset((pageNum - 1) * pageSize).Find(&artticleList).Error
+	var total int
+	err = db.Preload("Category").Limit(pageSize).Offset((pageNum - 1) * pageSize).Find(&artticleList).Count(&total).Error
 	fmt.Println(pageSize,pageNum,err)
 	if err != nil && err != gorm.ErrRecordNotFound{
-		return nil,errmsg.ERROR
+		return nil,errmsg.ERROR,0
 	}
-	return artticleList,errmsg.SUCCSE
+	return artticleList,errmsg.SUCCSE,total
 }
 
 // 查询单个文章

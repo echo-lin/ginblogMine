@@ -10,9 +10,9 @@ import (
 
 type User struct {
 	gorm.Model
-	Username string `gorm:"type:varchar(20);not null" json:"username" validate:"required,min=4,max=12"`
-	Password string `gorm:"type:varchar(20);not null" json:"Password" validate:"required,min=4,max=12"`
-	Role int `gorm:"type:int;DEFAULT:2" json:"Role" validate:"required,gte=2"`
+	Username string `gorm:"type:varchar(20);not null" json:"username" validate:"required,min=4,max=12" label:"用户名"`
+	Password string `gorm:"type:varchar(20);not null" json:"Password" validate:"required,min=6,max=12" label:"密码"`
+	Role int `gorm:"type:int;DEFAULT:2" json:"Role" validate:"required,gte=2" label:"角色码"`
 }
 
 // 查询用户是否存在
@@ -64,13 +64,14 @@ func (u *User)BeforeSave(){
 }
 
 // 获取用户
-func GetUsers(pageSize int, pageNum int)[]User{
+func GetUsers(pageSize int, pageNum int)([]User,int){
 	var users []User
-	err = db.Limit(pageSize).Offset((pageNum - 1) * pageSize).Find(&users).Error
+	var total int
+	err = db.Limit(pageSize).Offset((pageNum - 1) * pageSize).Find(&users).Count(&total).Error
 	if err != nil && err != gorm.ErrRecordNotFound{
-		return nil
+		return nil,0
 	}
-	return users
+	return users,total
 }
 
 // 加密密码

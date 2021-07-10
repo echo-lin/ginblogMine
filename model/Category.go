@@ -54,11 +54,12 @@ func DeleteCate(id int)int{
 }
 
 // 获取用户
-func GetCates(pageSize int, pageNum int)[]Category{
+func GetCates(pageSize int, pageNum int)([]Category,int){
 	var cate []Category
-	err = db.Limit(pageSize).Offset((pageNum - 1) * pageSize).Find(&cate).Error
+	var total int
+	err = db.Limit(pageSize).Offset((pageNum - 1) * pageSize).Find(&cate).Count(&total).Error
 	if err != nil && err != gorm.ErrRecordNotFound{
-		return nil
+		return nil,0
 	}
-	return cate
+	return cate,total
 }
